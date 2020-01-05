@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Smoky exhuast reporting (DEMO)</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body style="padding: 5px">
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- <script type="text/javascript" src="./js/vendor/jquery-3.4.1.min.js"></script> -->
+
+  <h3>Help cut vehicle smoke pollution</h3>
+  
+	<p><strong>Don't use this site while driving</strong></p>
+	<span id="spinnerspan"></span>
+
+	<div style="background-color: lightblue;">
+		<form method=post enctype=multipart/form-data id="fm1" name="fm1" onsubmit="submitImage()">
+			Take a photo of the exhaust smoke and number plate:
+			<br><input type=file name=file2 id="file2" onchange="resizeifneeded(this.files)">
+			<br>Tick this box <input type="checkbox" name="geoloc" onclick="geoLocButtonClick()"><label for="geoloc"> to send location with it</label>
+			<span id="loc" style="display: none;"><br>Detected approximate location: <textarea id="geoloc" cols="20" rows="2" value="d"></textarea></span>
+			<span id="goforit" style="display: none;"><br><input id="imgSubmit" type=submit value=Upload></span>
+		</form>
+	</div>
+	{% if msg %}
+	<p><strong>{{ msg }}</strong></p>{% endif %}
+	<hr>
+	{% if extracted_text %}
+	<p><label for="regno">Text detected in the photo</label>
+	<br><input id="regno" type="text" value="{{ extracted_text }}">
+	<br><small>Please correct to match the number plate</small></p>
+	{% if img_src %}
+	<img src="{{img_src}}">
+	{% endif %}
+	<hr>{% endif %}
+	
+	<details>
+		<summary>About this site ...</summary>
+		<p>This website shows how easy it is for the public to report very smoky vehicle exhausts they happen to see. It does not pass information to third parties.</p>
+		<p>This demonstration does not store number plates or precise locations. Spam content is also filtered out in the image processing step.</p>
+		<p>Detected geolocation and number plate could be collected and processed by a competent authority e.g. to inform the owners of the vehicles of potential problems with their vehicles - many drivers are unaware.</p>
+		<p>This site currently only shows them to the user who submits the photo, to show how the site functions. Number plates and faces are blocked out from submitted photos before being stored, and geolocation is trucated to tenths of a degree - a few miles square in the UK.</p>
+	</details>
+
+	<details>
+	<summary>About vehicle smoke and air pollution ...</summary>
+		<p><a href="https://www.gov.uk/government/publications/health-matters-air-pollution/health-matters-air-pollution">https://www.gov.uk/government/publications/health-matters-air-pollution/health-matters-air-pollution</a></p>
+		<p><a href="https://www.gov.uk/preventing-air-pollution/dark-smoke">https://www.gov.uk/preventing-air-pollution/dark-smoke</a></p>
+		<p>https://en.wikipedia.org/wiki/Particulates</p>
+		<p>https://en.wikipedia.org/wiki/Ringelmann_scale</p>
+		<!-- <p>https://shop.bsigroup.com/ProductDetail/?pid=000000000000373338&lang=_e</p> -->
+		<p>https://www.gov.uk/emissions-testing</p>
+	</details>
+
+	<hr>
+	<p><label for="feedback">Any feedback for us? <small>(optional)</small></label>
+	<br><textarea id="feedback" cols="30"></textarea></p>
+	<p><button id="submit_feedback">Submit feedback</button></p>
+
+  <script src="js/main.js"></script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+ <!--  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Smokey exhuast reporting (DEMO)</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+  <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body style="padding: 5px">
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <script type="text/javascript" src="./js/vendor/jquery-3.4.1.min.js"></script>
+
+  <h3>Pictures of exhaust smoke</h3>
+  
+	<details>
+  	<summary>Vehicle smoke causes air pollution. See more ...</summary>
+		<p><a href="https://www.gov.uk/government/publications/health-matters-air-pollution/health-matters-air-pollution">https://www.gov.uk/government/publications/health-matters-air-pollution/health-matters-air-pollution</a></p>
+		<p><a href="https://www.gov.uk/preventing-air-pollution/dark-smoke">https://www.gov.uk/preventing-air-pollution/dark-smoke</a></p>
+		<p>https://en.wikipedia.org/wiki/Particulates</p>
+		<p>https://en.wikipedia.org/wiki/Ringelmann_scale</p>
+		<!-- <p>https://shop.bsigroup.com/ProductDetail/?pid=000000000000373338&lang=_e</p> -->
+		<p>https://www.gov.uk/emissions-testing</p>
+	</details>
+	<p><small>This website exists to demonstrate how easy it is for the public to report to competent authorities when they happen to see very smoky vehicle exhausts on the road.</small> It does not take any specific action. <small>More info below.</small></p>
+
+
+	<div style="background-color: lightgreen">
+		<p><label for="file">Click here for your phone to take a picture of the smoking exhaust and "allow" your current location to be accessed to complete the report</label>
+		<br><input type="checkbox" name="geoloc" onclick="geoLocButtonClick()"><label for="geoloc">Send current location along with this photo</label>
+		<br><input id="file" type="file" accept="image/*"></p>
+	</div>
+	<hr>
+	<p><strong>Feedback</strong></p>
+	<p>Your detected geolocation: <span id="notes"></span></p>
+	<p><label for="regno">Registration number detected in the photo</label>
+	<br><input id="regno" type="text">
+	<br><small>Please correct if it has been wrongly detected</small></p>
+	<hr>
+	<p><label for="feedback">Any feedback for us? <small>(optional)</small></label>
+	<br><textarea id="feedback" cols="30"></textarea></p>
+	<p><button id="submit_feedback">Submit feedback</button></p>
+	<hr>
+	<p><strong>About this site</strong></p>
+	<p>This demonstration does not store number plates or precise locations. Spam content is also filtered out in the image processing step.</p>
+	<p>Detected geolocation and number plate could be collected and processed by a competent authority e.g. to inform the owners of the vehicles of potential problems with their vehicles - many drivers are unaware.</p>
+	<p>This site currently only shows them to the user who submits the photo, to show how the site functions. Number plates and faces are blocked out from submitted photos before being stored, and geolocation is trucated to tenths of a degree - a few miles square in the UK.</p>
+
+
+  <script src="js/main.js"></script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+ <!--  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
+</body>
+
+</html>
